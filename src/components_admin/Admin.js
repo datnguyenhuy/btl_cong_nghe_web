@@ -10,8 +10,10 @@ import HeaderAdmin from './HeaderAdmin'
 import SectionProduct from './section/RoutingAdmin'
 import {DataProvider} from './Context.js'
 
+import Cookies from 'js-cookie';
 export default class Admin extends Component{
   render(){
+    console.log("admin token ",Cookies.get('token'));
     return(
         <DataProvider>
         <div className="admin">

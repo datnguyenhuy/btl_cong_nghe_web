@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import querystring from 'querystring';
 import './login.css'
-import {useCookies} from 'react-cookie';
-import {WrappedComponet} from 'react';
 import {
     BrowserRouter as Router,
     Switch,
@@ -42,7 +40,9 @@ export default class Login extends Component{
             axios.post('http://localhost:3000/signin',body,headers)
             .then(res=>{
 
-                console.log(res.data.isAdmin);
+                // save token
+                Cookies.set('token',res.data.token);
+                console.log("saved token ",res.data.token);
                 if(res.data.isAdmin===0)
                     {
                         this.props.history.push('/user');
