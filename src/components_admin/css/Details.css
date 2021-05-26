@@ -1,0 +1,67 @@
+.detail{
+    margin: auto;
+    box-shadow: 2px 8px 20px #ddd;
+    margin-top: 50px;
+    height: 100%;
+    min-height: 260px;
+    width: 80%;
+    border: 1px solid rgb(214, 207, 207);
+    position: relative;
+}
+.detail img{
+    padding: 3px;
+    height: 255px;
+    width: 250px;
+    float: left;
+    padding-right: 30px;
+}
+.detail span{
+    margin-top: 25px;
+    display: block;
+    color: red;
+}
+.detail p{
+    color: rgb(39, 34, 34);
+}
+.detail button{
+    background-color: rgb(44, 33, 33);
+    margin-top: 20px;
+}
+.detail a{
+    text-decoration: none;
+    color: rgb(236, 234, 234);
+}
+.detail .amount button{
+    
+    background-color: black;
+}
+.detail .amount span{
+    display: inline;
+    padding: 0px 6px;
+}
+.detail .amount p{
+    position: absolute;
+    display: inline;
+    right: 12px;
+    bottom: 0px;
+    float: right
+}
+
+.pay{
+
+    box-shadow: 2px 8px 20px #ddd;
+    position: relative;
+    height: 30px;
+}
+.pay p{
+    position: absolute;
+    display: inline-block;
+    right: 70px;
+    top: -15px;
+    color: red;
+}
+.pay button{
+    margin-left: 10px;
+    background-color: rgb(46, 39, 39);
+    color: rgb(207, 198, 198);
+}
