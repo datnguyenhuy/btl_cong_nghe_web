@@ -7,11 +7,37 @@ import {
     Route,
     Link
   } from "react-router-dom";
+import Cookie from 'js-cookie';
+import axios from 'axios';
 
 class Header extends Component{
     static contextType = DataContext
+
+    state={
+        name:[]
+    }
+
+    getInfo=()=>{
+
+        if(Cookie.get('token') != null)
+        {
+            let header={
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'token': Cookie.get('token')
+            }
+    
+            axios.get('http://localhost:3000/user',{headers:header})
+            .then(res=>this.setState({name:res.data.fullName}))
+            .catch(error=>console.log(error));
+        }
+    }
+
     render(){
         const {cart} = this.context
+
+        
+        this.getInfo();
+
         return(
             <header>
                 <div className="logo">
@@ -20,7 +46,8 @@ class Header extends Component{
                 <nav>
                     <ul>
                         <li><Link to="/admin">Product Manage</Link></li>
-                        <li><Link to="/admin">User Manage</Link></li>                       
+                        <li><Link to="/admin">User Manage</Link></li> 
+                        <li id='name'>{this.state.name}</li>                  
                     </ul>
                 </nav>
             </header>

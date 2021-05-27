@@ -8,7 +8,6 @@ import {
 import HeaderUser from './HeaderUser'
 import RoutingUser from './RoutingUser'
 import {DataProvider} from './Context.js'
-
 export default class User extends Component{
     render(){
       return(

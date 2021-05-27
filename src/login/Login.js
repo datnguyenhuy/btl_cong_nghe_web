@@ -49,7 +49,10 @@ export default class Login extends Component{
                     }
                 else this.props.history.push('/admin');
             })
-            .catch((error)=>{}
+            .catch((error)=>{
+                alert('Đăng nhập không thành công. Vui lòng đăng nhập lại !');
+                this.props.history.push('/');
+            }
             );
 
 		} catch(e){
@@ -57,44 +60,8 @@ export default class Login extends Component{
 		}
     }
 
-    // handleToken = ()=>{
-    //     try{
-            
-    //         axios.defaults.headers.get['Content-Type'] = 'application/x-www-form-urlencoded';
-    //         let headers = {
-    //                 'Access-Control-Allow-Origin': '*',
-    //                 'Content-Type': 'application/x-www-form-urlencoded',
-    //                 'token': Cookies.get('token')
-	// 		};
-    //         // axios.get('http://localhost:3000/user','',headers) //,{headers: headers})
-    //         axios({
-    //             method: 'GET',
-    //             url: 'http://localhost:3000/user',
-    //             headers: headers
-    //         })
-    //         .then(res=>{
-    //             console.log(res);
-    //             if(res.data.isAdmin===0)
-    //                 {
-    //                     this.setState({redirect:0})
-    //                 }
-    //             else this.setState({redirect:1})
-    //         })
-    //         .catch((error)=>{console.log(error)}
-    //         );
-
-	// 	} catch(e){
-    //         console.log(e);  
-	// 	}
-    // }
 
     render(){
-
-    // if (Cookies.get('token')){
-    //     this.handleToken();
-    // } else {
-    //     Cookies.set('token','eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiIwc250dXluX2RuZzgyQHlhaG9vLmNvbSIsImZ1bGxOYW1lIjoiVGjhur8gSHXhuqVuIETGsMahbmciLCJpc0FkbWluIjoxLCJpYXQiOjE2MjE4NzcxMjQsImV4cCI6MTYyMTg4NzEyNH0.baaKV1CMOJT1JWC0yZgvBngbfvpI-VemrRW96o6Gn-M');
-    // }
 
      return(
       <div className='login'>

@@ -14,8 +14,9 @@ class Phone extends Component{
     componentDidMount(){
 
         axios.defaults.headers.get['Content-Type'] = 'text/plain';
-        axios.get('http://localhost:3000/product?type=phone&page=1&limit=10')
+        axios.get('http://localhost:3000/product?type=phone&page=0&limit=10')
         .then(res=>{
+            console.log(res);
             this.setState({products: res.data.map(pro=>pro)});
         })
         .catch(error=>{})

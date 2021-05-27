@@ -1,3 +1,7 @@
+#name{
+    color: brown;
+}
+
 header{
     display: flex;
     align-items: center;

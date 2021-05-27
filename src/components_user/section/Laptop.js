@@ -15,7 +15,7 @@ export default class Laptop extends Product{
     componentDidMount(){
 
         axios.defaults.headers.get['Content-Type'] = 'text/plain';
-        axios.get('http://localhost:3000/product?type=laptop&page=1&limit=10')
+        axios.get('http://localhost:3000/product?type=laptop&page=0&limit=10')
         .then(res=>{
             this.setState({products: res.data.map(pro=>pro)});
         })

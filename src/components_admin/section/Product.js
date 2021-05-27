@@ -12,22 +12,17 @@ class Product extends Component{
     deleteProduct =  (productId)=>{
         let headers = {
                 'Content-Type': 'application/x-www-form-urlencoded',
-                // 'Access-Control-Allow-Origin': '*',
                 'token': Cookies.get('token')
 		};
         axios.delete(`http://localhost:3000/product/${productId}`,{
-            data: querystring.stringify({a:'asssj'}),
             headers: headers
         })
         .then(res=>{
-            // console.log("delete ",productId," success");
-            // console.log(this.context.products.length);
-            // let index = this.context.products.findIndex(p=>p.id === productId);
-            // console.log(index);
-            // if (index>=0)this.context.products.splice(index,1);
-            
-            // console.log(this.context.products.length);
-            // this.render();
+            console.log("delete ",productId," success");
+            let index = this.context.products.findIndex(p=>p.id === productId);
+            if (index>=0)this.context.products.splice(index,1);
+
+            window.location.reload(false);
         })
         .catch((error)=>{console.log(error.message)});
     }

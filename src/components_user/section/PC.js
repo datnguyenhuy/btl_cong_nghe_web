@@ -14,7 +14,7 @@ class PC extends Component{
     componentDidMount(){
 
         axios.defaults.headers.get['Content-Type'] = 'text/plain';
-        axios.get('http://localhost:3000/product?type=pc&page=1&limit=10')
+        axios.get('http://localhost:3000/product?type=pc&page=0&limit=10')
         .then(res=>{
             this.setState({products: res.data.map(pro=>pro)});
         })

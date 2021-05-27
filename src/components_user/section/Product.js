@@ -14,8 +14,9 @@ class Product extends Component{
     componentDidMount(){
 
         axios.defaults.headers.get['Content-Type'] = 'text/plain';
-        axios.get('http://localhost:3000/product?type=all&page=1&limit=70')
+        axios.get('http://localhost:3000/product?type=all&page=0&limit=30')
         .then(res=>{
+            console.log(res);
             this.setState({products: res.data.map(pro=>pro)});
         })
         .catch(error=>{})

@@ -16,7 +16,6 @@ class RoutingUser extends Component{
                 <Route path="/user" component={Product} exact></Route>
                 <Route path="/user/product/:id" component={Detail} exact></Route>
                 <Route path="/user/laptop" component={Laptop} exact></Route>
-                
                 <Route path="/user/pc" component={PC} exact></Route>
                 </Switch>
             </section>

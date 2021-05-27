@@ -11,6 +11,7 @@ class Detail extends Component{
 
     componentDidMount(){
         const res = this.context
+        console.log(res);
         const data = res.products.filter(item =>
             {
                 console.log(item.id);
